@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#   "ls" recursively and gives the full pathname of each file.
+#   The listing for each subdirectory is a multiline record separated by a blank line;
+#   so use AWK features on Page 82.
+#    
+#   Junchang Ju
+#   SDSU
+#   Feb 24, 2010.
+#
+#   My original thought was to use the loop features of bash and it turned out to
+#   be too complicated. Use the tools instead of reinventing them.
+
+#   October 1, 2010
+#   bug fix: if the input directory has a trailing '/', there will be "//" in the
+#            file name, although most program can handle "//". Fix it anyway.
+
+# $@ is all the commandline parameters
+
+ls -R $@ | awk 'BEGIN {  RS = ""; 
+                        # So the directory name becomes $1 and its content filenames 
+                        # become $2, $3,..., $NF
+                      }
+                    
+                      { dir = substr($1, 1, length($1)-1)  # remove ":"
+                        if (substr(dir, length(dir)) == "/")
+                            dir = substr(dir, 1, length(dir)-1);
+                        for (i = 2; i <= NF; i++)
+                        printf("%s/%s\n", dir, $i) 
+                      }'
+              
