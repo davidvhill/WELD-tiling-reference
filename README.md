@@ -1,2 +1,2 @@
 # WELD-tiling-reference
-This is the original and untouched Landsat WELD code as received from South Dakota State University.  Permanent home needs to be under the USGS-EROS organization.
+This is the original Web Enabled Landsat Data (WELD) code as received from Dr. David Roy from South Dakota State University.
