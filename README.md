@@ -1,2 +1,2 @@
-# WELD-tiling-reference
-This is the original Web Enabled Landsat Data (WELD) code as received from Dr. David Roy at South Dakota State University.
+# Web Enabled Landsat Data (WELD)
+This is the original code as received from Dr. David Roy at South Dakota State University.
